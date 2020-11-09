@@ -10,7 +10,8 @@ for r in ranges:
             rgb_ranges = (r, g, b)
             t = randint(1, 10)
             i += 1
-            with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, open(f"testcases/output/output{i:02}.txt", 'w') as out_file:
+            with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, \
+                    open(f"testcases/output/output{i:02}.txt", 'w') as out_file:
                 in_file.write(f"{t}\n")
                 for _ in range(t):
                     r_g_b = [randint(*col) for col in rgb_ranges]
