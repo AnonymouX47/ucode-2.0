@@ -3,7 +3,7 @@ from solution import rgb
 
 ranges = ((0, 225), (-1000, -1), (256, 1000))
 
-i = 0
+i = -1
 for r in ranges:
     for g in ranges:
         for b in ranges:
