@@ -1,9 +1,7 @@
 import os
-from time import perf_counter
 from subprocess import run
-import functools
 
-__all__ = ["init", "zipper", "timer", "worst_case"]
+__all__ = ["init", "zipper"]
 
 def init():
     if "testcases" not in os.listdir():
@@ -31,26 +29,3 @@ def zipper(name):
 
     os.chdir("../")
 
-
-def timer(func):
-    """Simple timer function decorator"""
-
-    @functools.wraps(func)
-    def wrapper(*args):
-        start = perf_counter()
-        result = func(*args)
-        duration = perf_counter() - start
-        if duration > worst["time"]:
-            worst["args"], worst["result"], worst["time"] = args, result, duration
-        return result
-
-    return wrapper
-
-
-def worst_case():
-    for item in worst.items():
-        print(*item, sep=': ')
-        print()
-
-
-worst = {"args": None, "result": None, "time": 0}

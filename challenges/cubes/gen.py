@@ -6,10 +6,8 @@ sys.path.append("../")
 from utils import *
 
 init()
-solve = timer(solve)
 
 i = 0
-
 # Sample
 with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, \
         open(f"testcases/output/output{i:02}.txt", 'w') as out_file:
@@ -73,6 +71,5 @@ with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, \
                             solve(*[int(x) for x in line.strip().split(' ')])))
 
 
-worst_case()
 zipper("cubes")
 

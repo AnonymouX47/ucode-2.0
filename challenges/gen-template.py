@@ -6,7 +6,6 @@ sys.path.append("../")
 from utils import *
 
 init()
-solve = timer(solve)
 
 # Sample
 with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, \
@@ -15,6 +14,5 @@ with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, \
     out_file.write(f"{solve()}\n")
 
 
-worst_case()
 zipper("")
 
