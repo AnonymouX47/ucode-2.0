@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 def rgb(*args):
     return "#" + ("%02X" * 3) % (*[min(255, max(0, x)) for x in args],)
 

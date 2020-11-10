@@ -1,3 +1,5 @@
+#! /usr/nin/env python3
+
 from math import ceil, floor
 
 def solve(a, b):
