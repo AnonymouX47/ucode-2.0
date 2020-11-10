@@ -1,13 +1,7 @@
-from math import ceil, floor
+from math import ceil
 
 def solve(a, b):
-    lower = round(a ** (1/3), 8)
-    upper = round(b ** (1/3), 8)
-
-    if ceil(lower) == floor(upper):
-        return int(lower.is_integer() or upper.is_integer())
-    else:
-        return floor(upper) - ceil(lower) + 1
+    return int((b ** (1/3) + 0.000001) - ceil(a ** (1/3))) + 1
 
 if __name__ == "__main__":
     for _ in range(int(input())):
