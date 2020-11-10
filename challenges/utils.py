@@ -4,7 +4,7 @@ from subprocess import run
 __all__ = ["init", "zip"]
 
 def init():
-    if "testcases/" not in os.listdir():
+    if "testcases" not in os.listdir():
         os.mkdir("testcases/")
 
     files = os.listdir("testcases/")
@@ -12,6 +12,8 @@ def init():
         os.mkdir("testcases/input/")
         os.mkdir("testcases/output/")
         print("Created Directories")
+    else:
+        run("rm -r testcases/*put/*", shell=True)
 
 
 def zip(name: str):
