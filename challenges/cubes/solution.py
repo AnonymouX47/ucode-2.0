@@ -1,4 +1,4 @@
-#! /usr/nin/env python3
+#! /usr/bin/env python3
 
 from math import ceil, floor
 
@@ -7,4 +7,4 @@ def solve(a, b):
 
 if __name__ == "__main__":
     for _ in range(int(input())):
-        print(solve(*[int(x) for x in input().split()]))
+        print(solve(*(int(x) for x in input().split())))
