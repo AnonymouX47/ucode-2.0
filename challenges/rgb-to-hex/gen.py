@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 from random import randint
-from solution import rgb
+from solution import solve
 
 ranges = ((0, 225), (-1000, -1), (256, 1000))
 
@@ -18,4 +18,4 @@ for r in ranges:
                 for _ in range(t):
                     r_g_b = [randint(*col) for col in rgb_ranges]
                     in_file.write(' '.join(str(col) for col in r_g_b) + '\n')
-                    out_file.write(rgb(*r_g_b) + '\n')
+                    out_file.write(solve(*r_g_b) + '\n')
