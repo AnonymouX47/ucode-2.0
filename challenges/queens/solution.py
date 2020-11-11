@@ -110,14 +110,14 @@ def solve3(n: int, piece: str, r_p: int, c_p: int, obstacles: set):
 
 
 def solve(n: int, pieces: list, positions: list, obstacles, method: int):
-    print(f"{method= }")
+    # print(f"{method= }")
     method = (None, solve1, solve2, solve3)[method]
 
     squares_per_piece = {pos: (piece, method(n, piece, *pos, obstacles))
                             for piece, pos in zip(pieces, positions)}
     maxi = max(squares_per_piece.values(), key = lambda x: x[1])[1]
 
-    return "{}\n{}\n".format(maxi,
+    return "{}\n{}".format(maxi,
                         '\n'.join(f"{details[0]} {' '.join(map(str, pos))}"
                                     for pos, details in squares_per_piece.items()
                                     if details[1] == maxi))
