@@ -110,6 +110,7 @@ def solve3(n: int, piece: str, r_p: int, c_p: int, obstacles: set):
 
 
 def solve(n: int, pieces: list, positions: list, obstacles, method: int):
+    print(f"{method= }")
     method = (None, solve1, solve2, solve3)[method]
 
     squares_per_piece = {pos: (piece, method(n, piece, *pos, obstacles))
@@ -127,7 +128,8 @@ if __name__ == "__main__":
     pieces = input().split()
     positions = [tuple(map(int, input().split())) for _ in range(p)]
     if n == 1:
-        print(f"0\n{pieces[0]} {' '.join(positions[0])}\n")
+        print("0\n{} {}\n".format(pieces[0], ' '.join(map(str, positions[0]))))
+        raise SystemExit
 
     if n <= 20 * 10**3:
         method = 1
@@ -138,12 +140,15 @@ if __name__ == "__main__":
             obstacles[n*(r - 1) + c-1] = 0
         for r, c in positions:
             obstacles[n*(r - 1) + c-1] = 0
-    elif total_squares > k:
+    elif k + p-1 < total_squares(n, pieces, positions):
+        # Less obstacles than approximate maximum squares on pieces' paths
         method = 2
-        obstacles = {tuple(map(int,input().split())) for _ in range(k)}.update(positions)
+        obstacles = {tuple(map(int,input().split())) for _ in range(k)}
+        obstacles.update(positions)
     else:
         method = 3
-        obstacles = {tuple(map(int,input().split())) for _ in range(k)}.update(positions)
+        obstacles = {tuple(map(int,input().split())) for _ in range(k)}
+        obstacles.update(positions)
 
 
     print(solve(n, pieces, positions, obstacles, method))
