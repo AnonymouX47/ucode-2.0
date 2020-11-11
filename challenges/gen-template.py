@@ -9,6 +9,7 @@ from utils import *
 
 init()
 
+i = 0
 # Sample
 with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, \
         open(f"testcases/output/output{i:02}.txt", 'w') as out_file:
