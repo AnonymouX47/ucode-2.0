@@ -17,5 +17,5 @@ with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, \
     out_file.write(f"{solve()}\n")
 
 
-zipper("")
+zipper()
 

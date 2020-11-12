@@ -16,9 +16,10 @@ def init():
         run("rm -r testcases/*put/*", shell=True)
 
 
-def zipper(name):
+def zipper(name=""):
     """Creates testcases zip file."""
 
+    name = name or os.getcwd().split('/')[-1]
     os.chdir("testcases/")
     zipping = run(f"zip -qr {name}_testcases.zip input/ output/", shell=True, text=True)
 
