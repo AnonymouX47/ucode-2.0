@@ -128,7 +128,7 @@ if __name__ == "__main__":
     pieces = input().split()
     positions = [tuple(map(int, input().split())) for _ in range(p)]
     if n == 1:
-        print("0\n{} {}\n".format(pieces[0], ' '.join(map(str, positions[0]))))
+        print("0\n{} {}".format(pieces[0], ' '.join(map(str, positions[0]))))
         raise SystemExit
 
     if n <= 20 * 10**3:
