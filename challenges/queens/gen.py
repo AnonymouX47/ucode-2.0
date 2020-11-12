@@ -12,10 +12,10 @@ init()
 i = 0
 # Samples
 
-n, p, k = 8, 3, 4
+n, p, k = 8, 3, 5
 pieces = "q b r".split()
 positions = [(4, 2), (6, 4), (4, 6)]
-obstacles = [(2, 6), (2, 5), (1, 5), (4, 4)]
+obstacles = [(2, 6), (5, 2), (8, 4), (1, 5), (4, 4)]
 with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, \
         open(f"testcases/output/output{i:02}.txt", 'w') as out_file:
     in_file.write("{}\n{}\n{}\n{}\n".format(
