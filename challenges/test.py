@@ -16,8 +16,11 @@ for filename in sorted(os.listdir(f"{challenge}/testcases/input/"),
     output = evaluate("python testcase.py", text=f"{challenge}\n{filename}")
     results[filename] = eval(output[2])
 
-print("Worst Case: {}\n{}".format(*max(results.items(), key=lambda t :t[1][0])))
+print(*map("{0[0]}: {0[1]}".format, results.items()), sep='\n')
 print()
+
+print("Worst Time: {}\n{}\n".format(*max(results.items(), key=lambda t :t[1][0])))
+print("Worst Space: {}\n{}\n".format(*max(results.items(), key=lambda t :t[1][1])))
 
 if len(sys.argv) > 2:
     for result, filename in zip(results.values(),
