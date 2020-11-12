@@ -21,7 +21,6 @@ def solve(a):
     
     if s[-1] - s[-2] <= 2:
         counts.append(count[s[-2]] + count[s[-1]])
-    counts.append(count[s[-1]])
 
     # Max among summed counts and individual counts
     return max(counts + list(count.values()))
