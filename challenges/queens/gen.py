@@ -180,7 +180,7 @@ with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, \
 
 
 # Max n and p, Max p and k
-for n, p, k in ((100000, 20, 1000), (1000, 20, 100000)):
+for n, p, k in ((100000, 20, 1000), (10000, 20, 100000)):
     i += 1
     pieces = [choice(piece_types) for _ in range(p)]
     pos_set = set()
