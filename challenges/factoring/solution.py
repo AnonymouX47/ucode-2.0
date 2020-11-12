@@ -28,7 +28,6 @@ def solve(nums):
             continue
         for num, fac in reversed(numfacs.items()):
             if not n % num:
-                # print(n, num)
                 numfacs[n] = max(fac, largest_p_fac(n // num))
                 break
         else:
@@ -41,5 +40,5 @@ def solve(nums):
 if __name__ == "__main__":
     t, p = map(int, input().split())
     for _ in range(t):
-        print(solve(map(int, input().split())))
+        print(solve(map(int, input().split(' '))))
 
