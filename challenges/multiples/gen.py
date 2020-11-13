@@ -52,12 +52,12 @@ with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, \
 
 ## Should be Worst case
 i += 1
-t = 99999
+t = 100000
 # Primes have lowest LCMs since GCDs are 1, hence max possible number of multiples
 primes = (3, 5, 7, 11, 13, 17, 19)
 a = choice(primes)
 while a == (b := choice(primes)): pass
-testcases = [(a, b, randint(1000000, n_lim)) for _ in range(t)]
+testcases = [(a, b, randint(1000000, n_lim)) for _ in range(t-1)]
 testcases.append((3, 5, 1000000000))
 with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, \
         open(f"testcases/output/output{i:02}.txt", 'w') as out_file:
