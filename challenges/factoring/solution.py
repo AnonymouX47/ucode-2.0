@@ -33,8 +33,7 @@ def solve(nums):
         else:
             numfacs[n] = largest_p_fac(n)
 
-    maxfac = max(numfacs.values())
-    return max([num for num, fac in numfacs.items() if fac == maxfac])
+    return max(reversed(numfacs), key=numfacs.get)
 
 
 if __name__ == "__main__":
