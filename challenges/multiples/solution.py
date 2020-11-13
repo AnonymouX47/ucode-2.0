@@ -6,6 +6,7 @@ def solve(a, b, N):
     """ Returns sum of multiples of a *or* b *below* N
     Uses formular for sum of an AP.
     """
+
     sum_ = 0
 
     # Number of multiples of x below N is (N-1 // x)
