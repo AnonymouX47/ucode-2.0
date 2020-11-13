@@ -12,7 +12,7 @@ init()
 
 i = 0
 # Sample
-t, testcases = 2, ((3, 5, 10), (7, 8, 1000))
+t, testcases = 3, ((3, 5, 10), (4, 6, 30), (7, 8, 1000))
 with open(f"testcases/input/input{i:02}.txt", 'w') as in_file, \
         open(f"testcases/output/output{i:02}.txt", 'w') as out_file:
     in_file.write("{}\n{}".format(t,
