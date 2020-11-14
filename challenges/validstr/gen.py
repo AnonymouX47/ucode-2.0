@@ -42,7 +42,7 @@ for s_lim in (10, 100, 1000, 10000, 100000):
 
 #Targeted
 i += 1
-t = 10
+t = 11
 testcases = [choice(letters) * 100000]  # YES
 
 s = list(letters[:-1] * 3000 + 'z')  # YES -(z)
@@ -69,7 +69,10 @@ testcases.append(''.join(s))
 s = list(letters[:-2] * 3000 + 'yz' * 3001)  # YES -(yz)
 shuffle(s)
 testcases.append(''.join(s))
-s = list('a' + letters[2:-1] * 3000 + 'z'*3001)  # YES -(az)
+s = list('a' + letters[1:-1] * 3000 + 'z'*3001)  # YES -(az)
+shuffle(s)
+testcases.append(''.join(s))
+s = list('ab' + letters[2:-2] * 3000 + 'yz'*3001)  # NO
 shuffle(s)
 testcases.append(''.join(s))
 
