@@ -147,8 +147,8 @@ if __name__ == "__main__":
             obstacles[n*(r - 1) + c-1] = 0
         for r, c in positions:
             obstacles[n*(r - 1) + c-1] = 0
-    elif k + p-1 < total_squares(n, pieces, positions) / p**2:
-        # Less obstacles than "square-average" number of squares on the pieces' paths
+    elif k + p-1 < total_squares(n, pieces, positions):
+        # Less obstacles than average number of squares on the pieces' paths
         method = 2
         obstacles = {tuple(map(int,input().split())) for _ in range(k)}
         obstacles.update(positions)
